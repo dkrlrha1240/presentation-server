@@ -1,0 +1,20 @@
+* {
+    -fx-font-family: "Arial"; /* 폰트 설정 */
+}
+.bordered-pane {
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+    -fx-border-insets: 5;
+}
+
+/* TableView 전체 스타일 */
+.table-view {
+    -fx-font-family: "Arial"; /* 폰트 설정 */
+    -fx-font-size: 12px;      /* 폰트 크기 */
+}
+
+/* TableColumn 셀의 가운데 정렬 */
+.table-cell {
+    -fx-alignment: CENTER;    /* 글자 가운데 정렬 */
+}

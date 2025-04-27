@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="400.0" maxWidth="756.0" minHeight="400.0" minWidth="756.0" prefHeight="400.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.screen.form.FormController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <TabPane prefHeight="400.0" prefWidth="756.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="메인화면">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tableView" layoutX="14.0" layoutY="40.0" prefHeight="317.0" prefWidth="435.0" stylesheets="@styles.css">
+                                <columns>
+                                    <TableColumn fx:id="idColumn" prefWidth="75.0" text="id" visible="false" />
+                                  <TableColumn fx:id="statusColumn" prefWidth="46.0" text="상태" />
+                                  <TableColumn fx:id="ipColumn" prefWidth="150.0" text="IP" />
+                                    <TableColumn fx:id="jobColumn" prefWidth="86.0" text="직책" />
+                                    <TableColumn fx:id="nameColumn" prefWidth="91.0" text="성명" />
+                                    <TableColumn fx:id="positionColumn" prefWidth="61.0" text="위치" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <Label layoutX="14.0" layoutY="14.0" text="연결된 클라이언트">
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="429.0" layoutY="22.0" text="0대" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="591.0" layoutY="22.0" text="화면설정" />
+                              <Button fx:id="allHideButton" layoutX="513.0" layoutY="260.0" mnemonicParsing="false" onAction="#clickHideAllButton" prefHeight="38.0" prefWidth="204.0" text="모두숨김" />
+                              <Button fx:id="disconnectButton" layoutX="513.0" layoutY="308.0" mnemonicParsing="false" onAction="#clickDisconnectButton" prefHeight="38.0" prefWidth="204.0" text="연결해제" />
+                              <Button fx:id="fullButton" layoutX="513.0" layoutY="199.0" mnemonicParsing="false" onAction="#clickChangePosition" prefHeight="48.0" prefWidth="99.0" text="전체화면" />
+                              <Button fx:id="hideButton" layoutX="618.0" layoutY="199.0" mnemonicParsing="false" onAction="#clickChangePosition" prefHeight="48.0" prefWidth="99.0" text="숨김" />
+                              <Pane layoutX="513.0" layoutY="55.0" prefHeight="126.0" prefWidth="204.0">
+                                 <children>
+                                    <Button fx:id="oneButton" mnemonicParsing="false" onAction="#clickChangePosition" prefHeight="63.0" prefWidth="102.0" text="1">
+                                       <font>
+                                          <Font name="Arial" size="19.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="twoButton" layoutX="102.0" mnemonicParsing="false" onAction="#clickChangePosition" prefHeight="63.0" prefWidth="102.0" text="2">
+                                       <font>
+                                          <Font name="Arial" size="19.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="fourButton" layoutX="102.0" layoutY="63.0" mnemonicParsing="false" onAction="#clickChangePosition" prefHeight="63.0" prefWidth="102.0" text="4">
+                                       <font>
+                                          <Font name="Arial" size="19.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="threeButton" layoutY="63.0" mnemonicParsing="false" onAction="#clickChangePosition" prefHeight="63.0" prefWidth="102.0" text="3">
+                                       <font>
+                                          <Font name="Arial" size="19.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="레이아웃 설정">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" text="원하는 레이아웃을 선택하세요." />
+                              <RadioButton fx:id="optionOne" layoutX="74.0" layoutY="159.0" mnemonicParsing="false" onAction="#changeLayout" selected="true" text="1번 레이아웃">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="layoutGroup" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font>
+                              </RadioButton>
+                              <ImageView fitHeight="105.0" fitWidth="200.0" layoutX="20.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/org/screen/image/layout_1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="105.0" fitWidth="200.0" layoutX="278.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/org/screen/image/layout_2.png" />
+                                 </image></ImageView>
+                              <RadioButton fx:id="optionTwo" layoutX="332.0" layoutY="159.0" mnemonicParsing="false" onAction="#changeLayout" text="2번 레이아웃" toggleGroup="$layoutGroup">
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font></RadioButton>
+                              <RadioButton fx:id="optionThree" layoutX="582.0" layoutY="159.0" mnemonicParsing="false" onAction="#changeLayout" text="3번 레이아웃" toggleGroup="$layoutGroup">
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font></RadioButton>
+                              <ImageView fitHeight="105.0" fitWidth="200.0" layoutX="528.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/org/screen/image/layout_3.png" />
+                                 </image></ImageView>
+                              <ImageView fitHeight="105.0" fitWidth="200.0" layoutX="20.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/org/screen/image/layout_4.png" />
+                                 </image></ImageView>
+                              <RadioButton fx:id="optionFour" layoutX="74.0" layoutY="321.0" mnemonicParsing="false" onAction="#changeLayout" text="4번 레이아웃" toggleGroup="$layoutGroup">
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font></RadioButton>
+                              <RadioButton fx:id="optionFive" layoutX="332.0" layoutY="321.0" mnemonicParsing="false" onAction="#changeLayout" text="5번 레이아웃" toggleGroup="$layoutGroup">
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font></RadioButton>
+                              <ImageView fitHeight="105.0" fitWidth="200.0" layoutX="278.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/org/screen/image/layout_5.png" />
+                                 </image></ImageView>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
